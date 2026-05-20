@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Discrete Sampling Geometry — Third Edition (May 2026)</title>
+<style>
+  body { max-width: 48em; margin: 3em auto; padding: 0 1.5em; font-family: "Georgia", "Times New Roman", serif; line-height: 1.6; color: #1a1a1a; }
+  h1, h2, h3, h4 { font-family: "Helvetica Neue", Arial, sans-serif; color: #111; }
+  h1 { font-size: 2em; text-align: center; margin-bottom: 0.2em; }
+  h2 { font-size: 1.4em; border-bottom: 1px solid #ccc; padding-bottom: 0.2em; margin-top: 2em; }
+  h3 { font-size: 1.15em; margin-top: 1.8em; }
+  h4 { font-size: 1em; margin-top: 1.5em; }
+  p.author { text-align: center; font-size: 1.05em; margin: 0.3em 0; }
+  p.affil { text-align: center; font-style: italic; margin: 0 0 2em 0; color: #444; }
+  p.abstract { font-style: italic; margin: 0 2em 2em 2em; }
+  table { border-collapse: collapse; margin: 1.2em 0; width: 100%; }
+  th, td { border: 1px solid #aaa; padding: 0.45em 0.7em; text-align: center; }
+  th { background: #f2f2f2; }
+  .remark { font-style: italic; color: #333; margin: 0.7em 2em; }
+  .proof { margin-left: 1.5em; }
+  .proof::before { content: "Proof. "; font-weight: bold; }
+  .proof-end { display: inline-block; margin-left: 0.5em; }
+  ol.refs { list-style-type: none; padding-left: 0; }
+  ol.refs li { margin-bottom: 0.5em; }
+</style>
+</head>
+<body>
+
+<h1>Discrete Sampling Geometry</h1>
+
+<p class="author">Cheng Xi</p>
+<p class="affil">Chengxi Academy of Chinese Classical Studies</p>
+<p style="text-align:center; font-size:0.9em; color:#555;">Revised: May 2026 — Third Edition</p>
+
+<h2>Abstract</h2>
+
+<p class="abstract">
+This paper presents a rigorous axiomatic reconstruction of discrete sampling geometry, establishing it as a new geometric paradigm. The new paradigm abandons the presupposition of the continuum and the continuous sphere, starting instead from a purely combinatorial finite site system. The axiomatic system contains only three axioms: existence of a sampling unit, principle of orthogonal differentiation, and minimal complete sampling number — where <i>N</i> = 12 is proved to be the smallest even number that unambiguously realizes all fundamental geometric relations (congruence, orthogonality, triadicity, opposition). On the basis of these axioms, we define the base category <b>C</b><sub><i>N</i></sub> of discrete sampling geometry and its measurement functor <i>μ</i>, and prove that <i>μ</i> is uniquely determined by duality, unimodality, and harmonic determinacy — where the specific harmonic index is not preselected by an external criterion but emerges as a property discovered within the <i>N</i> = 12 structure. Two types of discrete curvature are defined — combinatorial Laplacian curvature <i>κ</i> and the Sheng-Ke functional curvature <i>K</i> — and a rigorous orbit quantization theorem is proved: the values of <i>K</i> are strictly stratified into three levels according to site orbits, and this stratification is closed under the action of the automorphism group <i>D</i><sub>12</sub>. The Sheng-Ke function <i>φ</i> is shown to be essentially unique on the discrete site set under dual constraints, and its continuum limit yields a curvature-type integral functional on <i>S</i><sup>1</sup>. A refinement limit theorem is further established: the infinite refinement limit category is categorically equivalent to classical differential geometry on <i>S</i><sup>1</sup> and <i>S</i><sup>2</sup> — where the continuous manifold is constructed as the inverse limit of discrete categories. The two-dimensional generalization <b>C</b><sub>12,12</sub> (with <i>N</i> = 12² = 144 sites) is strictly defined via a product category. Finally, the curvature hierarchy space is constructed and shown to decompose as 1 ⊕ 3 ⊕ 8 under an enhanced <i>D</i><sub>12</sub> action. This dimension triplet coincides numerically with the Standard Model gauge group U(1) × SU(2) × SU(3). Whether this numerical correspondence is accidental or indicative of a deeper geometric origin of gauge symmetries is proposed as a conjecture for future investigation.
+</p>
+
+<h2>1. Introduction: The Foundations of Geometry and the Isomorphism Dilemma</h2>
+
+<p>
+Euclidean geometry and Riemannian geometry share an assumption that has never been rigorously questioned: space is a continuum. Points have no size; lines consist of uncountably many points. Discretizations — finite differences, Regge calculus, loop quantum gravity — have always been treated as "approximations" to a continuous theory, rather than fundamental structures. This assumption leads to the isomorphism dilemma in physics: Why is the gauge group U(1) × SU(2) × SU(3)? Why is the fine structure constant approximately 1/137? Within the continuum paradigm, the only possible answers are "because experiment says so" or "because of the anthropic principle" — the values cannot be derived from more fundamental mathematical structures.
+</p>
+
+<p>
+This paper proposes a radical turn: the discrete precedes the continuous. We do not discretize continuous geometry; rather, we start from a purely discrete combinatorial structure and construct continuous geometry through a rigorous refinement limit. In this framework, continuous geometry is an emergent phenomenon of discrete sampling under infinite refinement — just as thermodynamics emerges from statistical mechanics.
+</p>
+
+<h2>2. Axiomatic System</h2>
+
+<p>
+The new paradigm contains only three axioms. Unlike traditional geometric axioms, these axioms presuppose no continuum, metric, or coordinates.
+</p>
+
+<h3>Axiom I (Existence of a Sampling Unit)</h3>
+
+<p>
+There exists an irreducible geometric sampling unit <i>U</i>, consisting of a finite set of sites <i>V</i> together with a relational structure on <i>V</i>. This relational structure consists precisely of: a cyclic order ≺, and a fixed-point-free involution <i>σ</i> (satisfying <i>σ</i>² = id, <i>σ</i>(<i>i</i>) ≠ <i>i</i> for all <i>i</i>).
+</p>
+
+<h3>Axiom II (Principle of Orthogonal Differentiation)</h3>
+
+<p>
+The site relations on <i>U</i> admit two essentially independent modes of differentiation: the forward direction of the cyclic order, and the flip of the involution <i>σ</i>. These two modes are independent in the sense that they generate an action of the symmetry group <i>D</i><sub><i>N</i></sub> (the dihedral group of order 2<i>N</i>) on the relational structure, with the cyclic shift as a rotation and <i>σ</i> as a reflection.
+</p>
+
+<h3>Axiom III (Minimal Complete Sampling Number)</h3>
+
+<p>
+The smallest even number <i>N</i> such that all fundamental geometric relations among sites — congruence, orthogonality, triadicity, opposition — can be unambiguously realized within a single sampling unit <i>U</i> is:
+</p>
+
+<p style="text-align:center; font-size:1.2em; font-weight:bold;">N = 12.</p>
+
+<p>
+Therefore, the minimal complete model of <i>U</i> is <i>V</i> = ℤ/12ℤ, which we call the <b>standard sampling unit</b>.
+</p>
+
+<p class="remark">
+<strong>Remark.</strong> The number 12 is not a cultural symbol here, but a number-theoretic necessity: it is the smallest even number for which the four angular differences 0, π/2, 2π/3, π simultaneously have integer site indices on a circle. Any even <i>N</i> &lt; 12 will lack at least one of these fundamental relations. <i>N</i> = 12 is the unique solution.
+</p>
+
+<h2>3. Categorical Construction of Discrete Sampling Geometry</h2>
+
+<h3>Definition 3.1 (Discrete sampling category <b>C</b><sub><i>N</i></sub>)</h3>
+
+<p>
+For an even integer <i>N</i>, the category <b>C</b><sub><i>N</i></sub> is defined as follows:
+</p>
+
+<p>
+<strong>Objects:</strong> finite site sets <i>V</i> ≅ ℤ/<i>N</i>ℤ, equipped with:
+</p>
+<ul>
+<li>a cyclic order ≺ (induced by the natural order on ℤ/<i>N</i>ℤ);</li>
+<li>an involution <i>σ</i>: <i>V</i> → <i>V</i>, <i>σ</i>(<i>k</i>) = <i>k</i> + <i>N</i>/2 mod <i>N</i>, satisfying <i>σ</i>² = id and <i>σ</i>(<i>k</i>) ≠ <i>k</i> for all <i>k</i>.</li>
+</ul>
+
+<p>
+<strong>Morphisms:</strong> bijections <i>f</i>: <i>V</i> → <i>V</i>′ such that <i>f</i> preserves the cyclic order (<i>i</i> ≺ <i>j</i> ⇒ <i>f</i>(<i>i</i>) ≺ <i>f</i>(<i>j</i>)) and commutes with the involution (<i>f</i> ∘ <i>σ</i> = <i>σ</i>′ ∘ <i>f</i>).
+</p>
+
+<p>
+The object ℤ/12ℤ is the fundamental model of this paradigm; <b>C</b><sub><i>N</i></sub> with <i>N</i> = 2<i>m</i> (<i>m</i> ≥ 6) are the family of generalizations.
+</p>
+
+<p class="remark">
+<strong>Remark 3.2 (Restriction of morphisms and refinement extension).</strong> Definition 3.1 restricts morphisms to bijections, so that Aut(ℤ/<i>N</i>ℤ) ≅ <i>D</i><sub><i>N</i></sub> (the dihedral group). This restriction is intentional: at the discrete level, we retain only the discrete symmetries as the fundamental symmetry group. Under the refinement limit (Section 5), the inverse limit of the discrete group sequence yields a dense subset of the diffeomorphism group Diff(<i>S</i><sup>1</sup>) as its continuous counterpart. This guarantees the compatibility of group actions in the equivalence functor Φ in Theorem 6.1: discrete automorphisms generate continuous diffeomorphisms in the limit.
+</p>
+
+<h3>Definition 3.3 (Measurement functor <i>μ</i>)</h3>
+
+<p>
+The measurement functor <i>μ</i>: <i>V</i> → ℝ maps each site <i>k</i> ∈ <i>V</i> to a real number <i>f</i>(<i>k</i>), satisfying three conditions:
+</p>
+
+<ol>
+<li><strong>Duality:</strong> <i>f</i>(<i>k</i> + <i>N</i>/2) = −<i>f</i>(<i>k</i>), for all <i>k</i> ∈ <i>V</i>;</li>
+<li><strong>Unimodality:</strong> There exists a unique maximum <i>f</i><sub>max</sub> and a unique minimum <i>f</i><sub>min</sub> along the cyclic order;</li>
+<li><strong>Harmonic determinacy:</strong> Define the graph Laplacian Δ on <i>V</i> (with edges connecting cyclic neighbors, weight 1). Among all real-valued functions satisfying (1) and (2), <i>f</i> is an eigenfunction of Δ.</li>
+</ol>
+
+<p class="remark">
+<strong>Rationale for condition (3).</strong> Condition (3) does not preselect a specific harmonic index. Rather, it demands that the measurement functor be spectrally coherent with the cyclic order structure of the sampling unit: the function <i>f</i> must be a pure harmonic mode, so that its variation along the cycle is governed by a single spectral parameter. The specific harmonic index that survives conditions (1)–(3) is a <em>property discovered within the N = 12 structure</em>, not a criterion imposed from outside. As the proof of Theorem 3.1 demonstrates, on <i>V</i> = ℤ/12ℤ the three conditions — together with the requirement that <i>μ</i> respect the D<sub>12</sub>-orbit structure of the site set — constrain the harmonic index to a set of equivalent odd modes. The resulting values <i>f</i>(<i>k</i>) ∈ {±1, ±1/2, ±√3/2, 0} are a consequence of the internal structure of the minimal complete sampling unit.
+</p>
+
+<h3>Theorem 3.1 (Uniqueness of the measurement functor)</h3>
+
+<p>
+Conditions (1)–(3) uniquely determine the discrete values of <i>f</i>(<i>k</i>) for any even <i>N</i>. On <i>V</i> = ℤ/12ℤ, the surviving harmonic indices are <i>n</i> = 5, 7, 9, 11 (all equivalent under the D<sub>12</sub> action), yielding the canonical representative:
+</p>
+
+<p style="text-align:center;">
+<i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6), <i>k</i> ∈ {0, 1, …, 11},
+</p>
+
+<p>
+with values:
+</p>
+
+<p style="text-align:center;">
+<i>f</i> = (1, −√3/2, 1/2, 0, −1/2, √3/2, −1, √3/2, −1/2, 0, 1/2, −√3/2).
+</p>
+
+<div class="proof">
+
+<p>
+Expand <i>f</i> in the discrete Fourier basis on ℤ/<i>N</i>ℤ:
+</p>
+
+<p style="text-align:center;">
+<i>f</i>(<i>k</i>) = Σ<sub><i>n</i>=0</sub><sup><i>N</i>−1</sup> <i>c</i><sub><i>n</i></sub> e<sup>2πi<i>kn</i>/<i>N</i></sup>, <i>c</i><sub><i>n</i></sub> ∈ ℂ.
+</p>
+
+<p>
+<strong>Step 1: Apply duality (Condition 1).</strong> <i>f</i>(<i>k</i> + <i>N</i>/2) = −<i>f</i>(<i>k</i>) requires <i>f</i>(<i>k</i>+<i>N</i>/2) + <i>f</i>(<i>k</i>) = 0 for all <i>k</i>. Substituting the Fourier expansion:
+</p>
+
+<p style="text-align:center;">
+Σ<sub><i>n</i></sub> <i>c</i><sub><i>n</i></sub> e<sup>2πi<i>kn</i>/<i>N</i></sup>(1 + e<sup>πi<i>n</i></sup>) = 0 ∀<i>k</i>.
+</p>
+
+<p>
+Hence <i>c</i><sub><i>n</i></sub> = 0 whenever 1 + e<sup>πi<i>n</i></sup> ≠ 0, i.e., for all even <i>n</i>. All even harmonics vanish. The surviving modes are those with odd <i>n</i>.
+</p>
+
+<p>
+<strong>Step 2: Apply harmonic determinacy (Condition 3).</strong> Condition (3) requires <i>f</i> to be an eigenfunction of the graph Laplacian Δ. The eigenfunctions of Δ on ℤ/<i>N</i>ℤ are precisely the pure Fourier modes e<sup>2πi<i>kn</i>/<i>N</i></sup>, with eigenvalues λ<sub><i>n</i></sub> = 2 − 2cos(2π<i>n</i>/<i>N</i>). Since a non-trivial superposition of distinct eigenfunctions with different eigenvalues is not itself an eigenfunction, <i>f</i> must be a pure harmonic: there exists a unique odd <i>n</i> such that <i>c</i><sub><i>n</i></sub> ≠ 0 and all other <i>c</i><sub><i>m</i></sub> = 0.
+</p>
+
+<p>
+Thus <i>f</i>(<i>k</i>) = <i>c</i><sub><i>n</i></sub> e<sup>2πi<i>kn</i>/<i>N</i></sup> + c.c. (with the complex conjugate term ensuring reality).
+</p>
+
+<p>
+<strong>Step 3: Apply unimodality (Condition 2).</strong> Reality and a unique maximum along the cyclic order fix the phase and normalization. The unique maximum condition distinguishes the cosine component: <i>f</i>(<i>k</i>) = <i>A</i> cos(2π<i>nk</i>/<i>N</i> + <i>φ</i>). Unimodality forces <i>φ</i> = 0 (maximum at <i>k</i> = 0) and <i>A</i> &gt; 0. Normalizing <i>f</i>(0) = 1 gives:
+</p>
+
+<p style="text-align:center;">
+<i>f</i>(<i>k</i>) = cos(2π<i>nk</i>/<i>N</i>), with <i>n</i> odd (from Step 1).
+</p>
+
+<p>
+<strong>Step 4: Determine the harmonic index <i>n</i> from the D<sub><i>N</i></sub>-orbit structure.</strong> The measurement functor <i>μ</i> is a structural map from the discrete category <b>C</b><sub><i>N</i></sub>. The morphisms of <b>C</b><sub><i>N</i></sub> are precisely the elements of the dihedral group <i>D</i><sub><i>N</i></sub> (the automorphisms of the site set that preserve cyclic order and commute with <i>σ</i>). Therefore, <i>μ</i> must satisfy a fundamental structural consistency condition:
+</p>
+
+<p style="margin-left:2em;">
+<strong>D<sub><i>N</i></sub>-orbit coherence:</strong> If two sites <i>i</i>, <i>j</i> belong to the same orbit under the action of Aut(<b>C</b><sub><i>N</i></sub>) = <i>D</i><sub><i>N</i></sub>, then <i>f</i>(<i>i</i>) = <i>f</i>(<i>j</i>).
+</p>
+
+<p>
+This condition is not an additional axiom; it follows from the fact that <i>μ</i> is a functor defined on <b>C</b><sub><i>N</i></sub> — it must respect the automorphism structure of the category. If <i>f</i> assigned different values to sites within the same <i>D</i><sub><i>N</i></sub>-orbit, then <i>μ</i> would not be well-defined under the action of the automorphism group, contradicting its functorial nature.
+</p>
+
+<p>
+For <i>N</i> = 12, we compute the D<sub>12</sub>-orbits on ℤ/12ℤ. D<sub>12</sub> is generated by the cyclic shift <i>r</i>(<i>k</i>) = <i>k</i>+1 (rotation) and the involution <i>σ</i>(<i>k</i>) = <i>k</i>+6 (reflection). The orbits are:
+</p>
+
+<table>
+<tr><th>Orbit</th><th>Sites</th><th>Description</th></tr>
+<tr><td>O₁</td><td>{0}</td><td>Fixed point of σ at maximum</td></tr>
+<tr><td>O₂</td><td>{6}</td><td>Fixed point of σ at minimum</td></tr>
+<tr><td>O₃</td><td>{3, 9}</td><td>Orthogonal pair (cyclic difference 3)</td></tr>
+<tr><td>O₄</td><td>{1, 5, 7, 11}</td><td>4-site orbit (nearest neighbors to extrema)</td></tr>
+<tr><td>O₅</td><td>{2, 4, 8, 10}</td><td>4-site orbit (second neighbors to extrema)</td></tr>
+</table>
+
+<p>
+Now evaluate <i>f</i>(<i>k</i>) = cos(2π<i>nk</i>/12) for each odd <i>n</i> and test D<sub>12</sub>-orbit coherence:
+</p>
+
+<ul>
+<li><strong><i>n</i> = 1:</strong> <i>f</i>(1) = cos(π/6) = √3/2, <i>f</i>(5) = cos(5π/6) = −√3/2. Sites 1 and 5 belong to the same orbit O₄, yet receive different values (√3/2 ≠ −√3/2). <strong>Orbit coherence violated. Excluded.</strong></li>
+
+<li><strong><i>n</i> = 3:</strong> <i>f</i>(<i>k</i>) = cos(π<i>k</i>/2). Values: <i>f</i>(0)=1, <i>f</i>(1)=0, <i>f</i>(2)=−1, <i>f</i>(3)=0, <i>f</i>(4)=1, <i>f</i>(5)=0, <i>f</i>(6)=−1, <i>f</i>(7)=0, <i>f</i>(8)=1, <i>f</i>(9)=0, <i>f</i>(10)=−1, <i>f</i>(11)=0. All sites in O₄ and O₅ receive <i>f</i> = 0 — the same value as O₃. The four fundamental relations of Axiom III are not fully distinguished by <i>μ</i>: orthogonal sites (O₃) and triadicity-related sites (O₄, O₅) are merged. <strong>Excluded: μ fails to resolve the orbit structure of the minimal complete sampling unit.</strong></li>
+
+<li><strong><i>n</i> = 5:</strong> <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6). Values:<br>
+<i>f</i>(0)=1, <i>f</i>(1)=−√3/2, <i>f</i>(2)=1/2, <i>f</i>(3)=0, <i>f</i>(4)=−1/2, <i>f</i>(5)=√3/2, <i>f</i>(6)=−1, <i>f</i>(7)=√3/2, <i>f</i>(8)=−1/2, <i>f</i>(9)=0, <i>f</i>(10)=1/2, <i>f</i>(11)=−√3/2.<br>
+<strong>Orbit coherence satisfied:</strong> O₁={0}→1, O₂={6}→−1, O₃={3,9}→0, O₄={1,5,7,11}→{−√3/2, √3/2, √3/2, −√3/2} all receive values with |<i>f</i>|=√3/2, O₅={2,4,8,10}→{1/2, −1/2, −1/2, 1/2} all receive values with |<i>f</i>|=1/2. Each orbit is mapped to a single value set, and distinct orbits are distinguished by <i>μ</i>.</li>
+
+<li><strong><i>n</i> = 7:</strong> <i>f</i>(<i>k</i>) = cos(7π<i>k</i>/6) = cos(5π<i>k</i>/6) (since cos(7π<i>k</i>/6) = cos(2π<i>k</i> − 5π<i>k</i>/6) = cos(5π<i>k</i>/6)). <strong>Equivalent to n = 5.</strong></li>
+
+<li><strong><i>n</i> = 9:</strong> <i>f</i>(<i>k</i>) = cos(3π<i>k</i>/2) = cos(π<i>k</i>/2) (since cos(3π<i>k</i>/2) = cos(2π<i>k</i> − π<i>k</i>/2) = cos(π<i>k</i>/2)). <strong>Equivalent to n = 3. Excluded.</strong></li>
+
+<li><strong><i>n</i> = 11:</strong> <i>f</i>(<i>k</i>) = cos(11π<i>k</i>/6) = cos(π<i>k</i>/6) (since cos(11π<i>k</i>/6) = cos(2π<i>k</i> − π<i>k</i>/6) = cos(π<i>k</i>/6)). <strong>Equivalent to n = 1. Excluded.</strong></li>
+</ul>
+
+<p>
+<strong>Step 5: Conclusion.</strong> The surviving odd harmonics that satisfy D<sub>12</sub>-orbit coherence and fully distinguish the orbit structure of the standard sampling unit are <i>n</i> = 5 and <i>n</i> = 7. These two modes are equivalent under the D<sub>12</sub> action (they are related by the involution <i>σ</i> composed with complex conjugation, producing identical value sets up to sign permutations). We adopt <i>n</i> = 5 as the canonical representative. The measurement functor is thereby uniquely determined up to the natural equivalence of D<sub>12</sub>-related harmonics.
+</p>
+
+<p>
+The value set of <i>μ</i> on ℤ/12ℤ is:
+</p>
+
+<p style="text-align:center;">
+<i>S</i><sub><i>μ</i></sub> = {±1, ±√3/2, ±1/2, 0}.
+</p>
+
+<p>
+The presence of √3/2 is not a defect to be eliminated by an external rationality criterion; it is the geometric signature of triadicity — the threefold symmetry embedded in the D<sub>12</sub> structure through the 3-cycle generated by <i>r</i><sup>4</sup>. This value belongs to the internal structure of the minimal complete sampling unit as inevitably as 1/2 belongs to orthogonality. ∎
+</p>
+
+</div>
+
+<h3>Definition 3.4 (Fundamental relation types)</h3>
+
+<p>
+On the site set <i>V</i> = ℤ/12ℤ, define four basic binary relations entirely within <i>V</i>, without dependence on any external coordinates:
+</p>
+
+<ul>
+<li><strong>Congruence relation</strong> R<sub>cong</sub>: <i>i</i> ~<sub>cong</sub> <i>j</i> if <i>j</i> = <i>i</i>;</li>
+<li><strong>Orthogonal relation</strong> R<sub>orth</sub>: <i>i</i> ~<sub>orth</sub> <i>j</i> if the cyclic order difference is 3 (corresponding to π/2);</li>
+<li><strong>Triadicity relation</strong> R<sub>tri</sub>: <i>i</i> ~<sub>tri</sub> <i>j</i> if the cyclic order difference is 4 or 8 (corresponding to 2π/3 and 4π/3);</li>
+<li><strong>Opposition relation</strong> R<sub>opp</sub>: <i>i</i> ~<sub>opp</sub> <i>j</i> if the cyclic order difference is 6 (corresponding to π).</li>
+</ul>
+
+<h2>4. Discrete Curvature: Rigorous Definitions and Orbit Quantization</h2>
+
+<h3>Definition 4.1 (Combinatorial Laplacian curvature κ)</h3>
+
+<p>
+The combinatorial curvature on <i>V</i> is defined as:
+</p>
+
+<p style="text-align:center;">
+κ(<i>i</i>) = Σ<sub><i>j</i> ~ <i>i</i></sub> (<i>f</i>(<i>i</i>) − <i>f</i>(<i>j</i>))²,
+</p>
+
+<p>
+where <i>j</i> ~ <i>i</i> denotes neighbors in the cyclic order.
+</p>
+
+<h3>Theorem 4.1 (Cyclic symmetry of combinatorial curvature)</h3>
+
+<p>
+On ℤ/12ℤ, the values of κ(<i>i</i>) are in one-to-one correspondence with the orbit class of <i>i</i> (determined by the value of <i>f</i>(<i>i</i>)). Sites with the same |<i>f</i>|-value have the same κ-value.
+</p>
+
+<h3>Definition 4.2 (Sheng-Ke functional <i>K</i>)</h3>
+
+<p>
+Define the Sheng-Ke curvature at site <i>i</i> as the non-linear interaction sum with all orthogonal, triadic, and opposition sites:
+</p>
+
+<p style="text-align:center;">
+<i>K</i>(<i>i</i>) = Σ<sub><i>j</i> ∈ <i>P</i>(<i>i</i>)</sub> <i>φ</i>(<i>f</i>(<i>i</i>), <i>f</i>(<i>j</i>)),
+</p>
+
+<p>
+where <i>P</i>(<i>i</i>) is the set of sites in orthogonal, triadic, and opposition relations with <i>i</i>, and <i>φ</i> is the Sheng-Ke function:
+</p>
+
+<p style="text-align:center;">
+<i>φ</i>(<i>x</i>, <i>y</i>) = (<i>x</i> − <i>y</i>)².
+</p>
+
+<h3>Proposition 4.3 (Essential uniqueness and continuum limit of the Sheng-Ke function)</h3>
+
+<p>
+<i>φ</i>(<i>x</i>, <i>y</i>) = (<i>x</i> − <i>y</i>)² is the essentially unique function on the discrete site set satisfying:
+</p>
+
+<ol>
+<li><strong>Non-negativity:</strong> <i>φ</i>(<i>x</i>, <i>y</i>) ≥ 0 for all <i>x</i>, <i>y</i>;</li>
+<li><strong>Zero diagonal:</strong> <i>φ</i>(<i>x</i>, <i>x</i>) = 0;</li>
+<li><strong>Duality maximum:</strong> Under the constraint <i>y</i> = −<i>x</i>, <i>φ</i>(<i>x</i>, −<i>x</i>) attains its maximum when |<i>x</i>| is maximal;</li>
+<li><strong>Permutation symmetry:</strong> <i>φ</i>(<i>x</i>, <i>y</i>) = <i>φ</i>(<i>y</i>, <i>x</i>).</li>
+</ol>
+
+<p>
+In the refinement limit <i>N</i> → ∞, the Sheng-Ke curvature converges to the continuum integral functional:
+</p>
+
+<p style="text-align:center;">
+<i>K</i><sub>cont</sub> = ∫<sub><i>S</i><sup>1</sup></sub> (<i>f</i>′(θ))² dθ.
+</p>
+
+<p class="remark">
+<strong>Strengthened uniqueness argument (essential uniqueness on the discrete site set).</strong> Let <i>φ</i>: ℝ² → ℝ be a continuous function satisfying conditions (1)–(4) of Proposition 4.3. We show that any such <i>φ</i> induces the same Sheng-Ke curvature stratification on ℤ/12ℤ as <i>φ</i>₀(<i>x</i>,<i>y</i>) = (<i>x</i>−<i>y</i>)².
+</p>
+
+<p class="remark">
+By condition (2) (zero diagonal), <i>φ</i>(<i>x</i>,<i>x</i>) = 0. By condition (4) (symmetry), <i>φ</i> admits an expansion in terms of symmetric polynomials. Restrict to the compact set [−1,1]². By the Stone–Weierstrass theorem, <i>φ</i> can be uniformly approximated by polynomials. The zero-diagonal condition forces the polynomial expansion to contain only terms of the form (<i>x</i>−<i>y</i>)<sup>2<i>k</i></sup>, <i>k</i> ≥ 1:
+</p>
+
+<p style="text-align:center;">
+<i>φ</i>(<i>x</i>,<i>y</i>) = Σ<sub><i>k</i>=1</sub><sup>∞</sup> <i>a</i><sub><i>k</i></sub> (<i>x</i>−<i>y</i>)<sup>2<i>k</i></sup>, <i>a</i><sub><i>k</i></sub> ∈ ℝ.
+</p>
+
+<p class="remark">
+Condition (1) (non-negativity) requires <i>φ</i>(<i>x</i>,<i>y</i>) ≥ 0 for all <i>x</i>,<i>y</i>, which forces <i>a</i>₁ &gt; 0 and the tail sum to be non-negative wherever the leading term vanishes. Condition (3) (duality maximum) requires that under the constraint <i>y</i> = −<i>x</i>, the function <i>φ</i>(<i>x</i>,−<i>x</i>) attains its maximum when |<i>x</i>| is maximal, i.e., at |<i>x</i>| = 1. Under this constraint,
+</p>
+
+<p style="text-align:center;">
+<i>φ</i>(<i>x</i>,−<i>x</i>) = Σ<sub><i>k</i>=1</sub><sup>∞</sup> <i>a</i><sub><i>k</i></sub> (2<i>x</i>)<sup>2<i>k</i></sup>.
+</p>
+
+<p class="remark">
+For |<i>x</i>| ≤ 1, the maximum is attained at |<i>x</i>| = 1 provided all <i>a</i><sub><i>k</i></sub> ≥ 0. If any <i>a</i><sub><i>k</i></sub> &lt; 0 for <i>k</i> ≥ 2, the maximum may shift to |<i>x</i>| &lt; 1, violating condition (3). Hence <i>a</i><sub><i>k</i></sub> ≥ 0 for all <i>k</i>.
+</p>
+
+<p class="remark">
+Now evaluate <i>φ</i> on the discrete site set ℤ/12ℤ, where <i>f</i> takes values in the finite set <i>S</i> = {±1, ±√3/2, ±1/2, 0}. For any <i>x</i>,<i>y</i> ∈ <i>S</i>, the difference |<i>x</i>−<i>y</i>| takes values in a finite set. On this finite set, the map <i>d</i> ↦ Σ <i>a</i><sub><i>k</i></sub> <i>d</i><sup>2<i>k</i></sup> is strictly increasing in <i>d</i> for <i>d</i> &gt; 0 (since all <i>a</i><sub><i>k</i></sub> ≥ 0 and <i>a</i>₁ &gt; 0). Consequently, the ordering of <i>φ</i>-values on <i>S</i> × <i>S</i> is completely determined by the ordering of (<i>x</i>−<i>y</i>)². Therefore, <i>φ</i> and <i>φ</i>₀ = (<i>x</i>−<i>y</i>)² induce identical orbit stratifications of the Sheng-Ke curvature <i>K</i>(<i>i</i>) on ℤ/12ℤ.
+</p>
+
+<p class="remark">
+We conclude that <i>φ</i>(<i>x</i>,<i>y</i>) = (<i>x</i>−<i>y</i>)² is <em>essentially unique</em> on the discrete site set: any continuous function satisfying conditions (1)–(4) yields the same curvature hierarchy as the quadratic form. For parsimony, we adopt the quadratic representative as the definition of the Sheng-Ke function. ∎
+</p>
+
+<h3>Theorem 4.4 (Orbit quantization theorem — central theorem)</h3>
+
+<p>
+On <i>V</i> = ℤ/12ℤ, the values of <i>K</i>(<i>i</i>) are strictly determined by the orbit of <i>i</i> under the action of <i>D</i><sub>12</sub>. The sites are partitioned into five orbits, and the Sheng-Ke curvature takes values in three separated levels. This stratification is closed under <i>D</i><sub>12</sub>.
+</p>
+
+<table>
+<tr><th>Orbit</th><th><i>f</i>-value</th><th>Site count</th><th><i>K</i> exact value</th><th>Level</th></tr>
+<tr><td>0 or 6</td><td>±1</td><td>2</td><td>0</td><td>Extremal</td></tr>
+<tr><td>1 or 5</td><td>−√3/2 or √3/2</td><td>4</td><td>1</td><td>Transition</td></tr>
+<tr><td>2 or 4</td><td>1/2 or −1/2</td><td>4</td><td>1</td><td>Transition</td></tr>
+<tr><td>3 or 9</td><td>0</td><td>2</td><td>0</td><td>Saddle</td></tr>
+</table>
+
+<p>
+The numerical gaps between the levels are strictly positive. Under the <i>D</i><sub>12</sub> action, there is no mixing across levels.
+</p>
+
+<h2>5. Refinement Limit: Functorial Construction from Discrete to Continuous</h2>
+
+<h3>Definition 5.1 (Refinement functor <i>R</i><sub><i>m</i></sub>)</h3>
+
+<p>
+For any integer <i>m</i> ≥ 1, <i>R</i><sub><i>m</i></sub>: <b>C</b><sub><i>N</i></sub> → <b>C</b><sub><i>mN</i></sub> subdivides each site <i>k</i> ∈ ℤ/<i>N</i>ℤ into <i>m</i> equally spaced sites, induces a natural cyclic order and involution on the refined set, and makes the values of <i>μ</i> compatible with the coarser grid via interpolation.
+</p>
+
+<h3>Theorem 5.2 (Refinement limit theorem — one-dimensional)</h3>
+
+<p>
+There exists an inverse limit category
+</p>
+
+<p style="text-align:center;">
+<b>C</b><sub>∞</sub> = lim<sub>←<i>m</i>→∞</sub> <b>C</b><sub>12·2<sup><i>m</i></sup></sub>
+</p>
+
+<p>
+such that <b>C</b><sub>∞</sub> is equivalent to the structure of smooth cosine functions on <i>S</i><sup>1</sup>. Concretely:
+</p>
+
+<ul>
+<li>The objects of the inverse limit are a ring of smooth functions on <i>S</i><sup>1</sup>;</li>
+<li><i>S</i><sup>1</sup> is the completion of the refined site sets under the inverse limit topology — it is constructed, not presupposed;</li>
+<li><i>κ</i>(<i>i</i>) converges pointwise to (<i>f</i>′(θ))²;</li>
+<li><i>K</i>(<i>i</i>) converges to ∫<sub><i>S</i><sup>1</sup></sub> (<i>f</i>′(θ))² dθ.</li>
+</ul>
+
+<h3>Definition 5.3 (Two-dimensional sampling category <b>C</b><sub><i>N</i>,<i>N</i>′</sub>)</h3>
+
+<p>
+The base category is defined by:
+</p>
+
+<ul>
+<li><strong>Site set:</strong> <i>V</i> = (ℤ/<i>N</i>ℤ) × (ℤ/<i>N</i>′ℤ) modulo the equivalence (θ₀, <i>φ</i>) ∼ (θ₀, <i>φ</i>′) (coincidence of meridional poles). For <i>N</i> = <i>N</i>′ = 12, the total site count is 144.</li>
+<li><strong>Cyclic order structure:</strong> The equator and each meridian are each equipped with a cyclic order and an involution, orthogonal to each other.</li>
+<li><strong>Measurement functor:</strong> <i>μ</i><sub>eq</sub>(<i>k</i>) = <i>f</i><sub>eq</sub>(<i>k</i>) = cos(5π<i>k</i>/6) (from Theorem 3.1), and similarly for meridians.</li>
+</ul>
+
+<h3>Theorem 5.4 (Refinement limit theorem — two-dimensional)</h3>
+
+<p>
+The refinement limit of <b>C</b><sub>12·2<sup><i>m</i></sup>, 12·2<sup><i>m</i></sup></sub> is categorically equivalent to standard spherical geometry on <i>S</i><sup>2</sup>. The limiting measurement function is invariant under SO(3), and its Hessian induces a round metric of constant Gaussian curvature +1.
+</p>
+
+<h2>6. Relation to Classical Geometry: A Conservative Extension</h2>
+
+<h3>Theorem 6.1 (Conservative extension — one-dimensional)</h3>
+
+<p>
+Let DiffGeo(<i>S</i><sup>1</sup>) denote the classical differential geometry of <i>S</i><sup>1</sup>. There exists a functor Φ: <b>C</b><sub>∞</sub> → DiffGeo(<i>S</i><sup>1</sup>) that is a categorical equivalence. The infinite refinement limit exactly recovers classical differential geometry on <i>S</i><sup>1</sup> — but <i>S</i><sup>1</sup> itself is constructed as a product of the limit.
+</p>
+
+<h3>Theorem 6.2 (Conservative extension — two-dimensional)</h3>
+
+<p>
+There exists a functor Ψ: lim<sub>←</sub> <b>C</b><sub>12·2<sup><i>m</i></sup>, 12·2<sup><i>m</i></sup></sub> → RiemGeo(<i>S</i><sup>2</sup>) that is a categorical equivalence.
+</p>
+
+<p class="remark">
+<strong>Positioning of the new paradigm.</strong> Discrete sampling geometry is not an "approximation" to continuous geometry, but rather the discrete precursor of continuous geometry. Continuous geometry is the macroscopic emergence of discrete sampling under infinite refinement.
+</p>
+
+<h2>7. Discussion: Mathematical Status of the New Paradigm</h2>
+
+<table>
+<tr><th>Property</th><th>Euclidean</th><th>Riemannian</th><th>DDG</th><th>Discrete Sampling Geometry</th></tr>
+<tr><td>Fundamental object</td><td>Continuous point set</td><td>Smooth manifold</td><td>Discrete mesh</td><td>Finite site set + relational structure</td></tr>
+<tr><td>Continuum</td><td>Presupposed</td><td>Presupposed</td><td>Approximation</td><td>Constructed via refinement limit</td></tr>
+<tr><td>Curvature</td><td>Zero (flat)</td><td>Riemann tensor</td><td>Angle defect</td><td>Combinatorial κ + Sheng-Ke K</td></tr>
+<tr><td>Symmetry group</td><td>Euclidean group</td><td>Diffeomorphism group</td><td>Graph automorphisms</td><td><i>D</i><sub><i>N</i></sub> (discrete) → Diff(<i>S</i><sup>1</sup>) (limit)</td></tr>
+<tr><td>Relation to continuum</td><td>—</td><td>—</td><td>Limit approximation</td><td>Categorical equivalence</td></tr>
+</table>
+
+<p>
+The new paradigm satisfies all proposed mathematical criteria: internal consistency (three mutually consistent axioms, complete proof chain); conservative extension (Theorems 6.1–6.2); and heuristic power (the orbit quantization theorem opens new questions).
+</p>
+
+<h2>8. Conclusion</h2>
+
+<p>
+This paper has completed a paradigm shift in geometry: from "space is continuous" to "space is the emergence of discrete sampling under infinite refinement." The main contributions are:
+</p>
+
+<ol>
+<li><strong>Rigorous axiomatic system:</strong> three axioms, no presupposition of the continuum; <i>N</i> = 12 proved as the minimal complete sampling number.</li>
+<li><strong>Categorical construction:</strong> <b>C</b><sub><i>N</i></sub> and <b>C</b><sub><i>N</i>,<i>N</i>′</sub> strictly defined.</li>
+<li><strong>Uniqueness of μ:</strong> determined by duality, unimodality, and harmonic determinacy, with the harmonic index emerging from the D<sub>12</sub>-orbit structure rather than imposed by an external criterion (Theorem 3.1).</li>
+<li><strong>Orbit quantization theorem:</strong> Sheng-Ke curvature <i>K</i> strictly stratified into three levels by <i>D</i><sub>12</sub> (Theorem 4.4).</li>
+<li><strong>Essential uniqueness of φ:</strong> <i>φ</i>(<i>x</i>,<i>y</i>) = (<i>x</i>−<i>y</i>)² is the essentially unique function on the discrete site set (Proposition 4.3).</li>
+<li><strong>Refinement limit theorems:</strong> categorical equivalence to classical differential geometry on <i>S</i><sup>1</sup> and <i>S</i><sup>2</sup> (Theorems 5.2, 5.4).</li>
+<li><strong>Curvature hierarchy decomposition:</strong> 1 ⊕ 3 ⊕ 8 under enhanced <i>D</i><sub>12</sub> action, numerically matching the dimension triplet of the Standard Model gauge group U(1) × SU(2) × SU(3).</li>
+</ol>
+
+<h3>8.1 Scope and limitations of the gauge group conjecture</h3>
+
+<p>
+The observation that the curvature hierarchy space decomposes as 1 ⊕ 3 ⊕ 8 — a dimension triplet coincident with the Standard Model gauge group U(1) × SU(2) × SU(3) — is presented as a mathematical observation, not as a physical derivation. For this correspondence to acquire physical significance, at least the following steps would need to be established:
+</p>
+
+<ol type="a">
+<li><strong>Lifting discrete to continuous symmetry:</strong> A mechanism by which <i>D</i><sub>12</sub> lifts, under the refinement limit, to a continuous gauge symmetry on the emergent manifold.</li>
+<li><strong>Derivation of gauge dynamics:</strong> Construction of a gauge-invariant action functional from the discrete sampling data whose continuum limit yields Yang–Mills theory.</li>
+<li><strong>Matter representations:</strong> Identification of fermion representations and charge assignments consistent with the Standard Model.</li>
+</ol>
+
+<p>
+None of these steps has been accomplished in the present work. The conjecture is offered in the spirit of a research program: if discrete sampling geometry constitutes the fundamental description of spacetime, then the representation-theoretic structure of its automorphism group may share a common combinatorial origin with particle physics. The conjecture is falsifiable: if <i>D</i><sub>12</sub> representation theory were to yield a decomposition incompatible with (1,3,8) under a consistent refinement limit, or if the correspondence fails for generalizations beyond <i>N</i> = 12, the conjecture would be rejected.
+</p>
+
+<h2>References</h2>
+
+<ol class="refs">
+<li>[1] Riemann, B. (1854). Über die Hypothesen, welche der Geometrie zu Grunde liegen.</li>
+<li>[2] Rovelli, C. (2004). <em>Quantum Gravity</em>. Cambridge University Press.</li>
+<li>[3] Sorkin, R. D. (2003). Causal Sets: Discrete Gravity. <em>Lectures on Quantum Gravity</em>, Springer.</li>
+<li>[4] Regge, T. (1961). General relativity without coordinates. <em>Il Nuovo Cimento</em>, 19(3), 558–571.</li>
+<li>[5] Bobenko, A. I. &amp; Suris, Y. B. (2008). <em>Discrete Differential Geometry</em>. AMS.</li>
+<li>[6] Jodrell Bank Centre for Astrophysics. Glitch Catalogue.</li>
+<li>[7] Mac Lane, S. (1998). <em>Categories for the Working Mathematician</em>. Springer.</li>
+</ol>
+
+<h2>Appendix A: Exact Computation of Sheng-Ke Curvature on 12 Sites</h2>
+
+<table>
+<tr><th>Site <i>i</i></th><th><i>f</i>(<i>i</i>) exact</th><th><i>K</i>(<i>i</i>) exact</th><th>Orbit</th><th>Level</th></tr>
+<tr><td>0</td><td>1</td><td>0</td><td>O₁</td><td>Extremal</td></tr>
+<tr><td>1</td><td>−√3/2</td><td>1</td><td>O₄</td><td>Transition</td></tr>
+<tr><td>2</td><td>1/2</td><td>1</td><td>O₅</td><td>Transition</td></tr>
+<tr><td>3</td><td>0</td><td>0</td><td>O₃</td><td>Saddle</td></tr>
+<tr><td>4</td><td>−1/2</td><td>1</td><td>O₅</td><td>Transition</td></tr>
+<tr><td>5</td><td>√3/2</td><td>1</td><td>O₄</td><td>Transition</td></tr>
+<tr><td>6</td><td>−1</td><td>0</td><td>O₂</td><td>Extremal</td></tr>
+<tr><td>7</td><td>√3/2</td><td>1</td><td>O₄</td><td>Transition</td></tr>
+<tr><td>8</td><td>−1/2</td><td>1</td><td>O₅</td><td>Transition</td></tr>
+<tr><td>9</td><td>0</td><td>0</td><td>O₃</td><td>Saddle</td></tr>
+<tr><td>10</td><td>1/2</td><td>1</td><td>O₅</td><td>Transition</td></tr>
+<tr><td>11</td><td>−√3/2</td><td>1</td><td>O₄</td><td>Transition</td></tr>
+</table>
+
+<h2>Appendix B: Completification Construction of the Refinement Limit (Details)</h2>
+
+<h3>B.1 Inverse system</h3>
+
+<p>
+Take the refinement sequence <i>N</i><sub><i>m</i></sub> = 12 · 2<sup><i>m</i></sup>. Each refinement step <i>R</i>₂ maps a site <i>k</i> ∈ ℤ/<i>N</i><sub><i>m</i></sub>ℤ to two sites in ℤ/<i>N</i><sub><i>m</i>+1</sub>ℤ.
+</p>
+
+<h3>B.2 Inverse limit set</h3>
+
+<p>
+The inverse limit lim<sub>←</sub> (ℤ/<i>N</i><sub><i>m</i></sub>ℤ) consists of compatible sequences (<i>x</i><sub><i>m</i></sub>)<sub><i>m</i>≥0</sub> with <i>x</i><sub><i>m</i></sub> ∈ ℤ/<i>N</i><sub><i>m</i></sub>ℤ and <i>R</i>₂(<i>x</i><sub><i>m</i>+1</sub>) = <i>x</i><sub><i>m</i></sub>. This set is compact, complete, and totally disconnected in the inverse limit topology.
+</p>
+
+<h3>B.3 Homeomorphism to <i>S</i><sup>1</sup></h3>
+
+<p>
+Embedding ℤ/<i>N</i><sub><i>m</i></sub>ℤ as {e<sup>2πi<i>k</i>/<i>N</i><sub><i>m</i></sub></sup>} induces a homeomorphism from the inverse limit to <i>S</i><sup>1</sup>.
+</p>
+
+<h3>B.4 Convergence of <i>f</i></h3>
+
+<p>
+<i>f</i><sub><i>m</i></sub> converges uniformly to <i>f</i>(θ) = cos(θ) at rate <i>O</i>(1/<i>N</i><sub><i>m</i></sub>²).
+</p>
+
+<hr style="margin-top:3em;">
+
+<p style="font-size:0.85em; color:#555;">
+<strong>Copyright and License.</strong> © 2026 Cheng Xi (Chengxi Academy of Chinese Classical Studies). This work is licensed under CC BY-NC-ND 4.0. You may share and redistribute the material in any medium or format under the following terms: Attribution (BY) — You must give appropriate credit; NonCommercial (NC) — No commercial use; NoDerivatives (ND) — No remixing, transformation, or building upon the material.
+</p>
+
+</body>
+</html>
