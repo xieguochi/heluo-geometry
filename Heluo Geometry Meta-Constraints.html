@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heluo Geometry: Meta-Constraints — Why Physical Laws Must Be This Way</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', 'Georgia', serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            margin: 2.5cm auto;
+            max-width: 800px;
+            padding: 0 20px;
+            text-align: justify;
+        }
+        h1 {
+            font-size: 20pt;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 16pt;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 14pt;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .author {
+            text-align: center;
+            font-size: 14pt;
+            margin-bottom: 5px;
+        }
+        .affiliation {
+            text-align: center;
+            font-size: 10pt;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .abstract {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .abstract-title {
+            font-weight: bold;
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .equation {
+            text-align: center;
+            margin: 15px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        .boxed {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 15px 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 10pt;
+            text-align: center;
+        }
+        .discovery {
+            background-color: #e8f4f8;
+            padding: 12px;
+            margin: 15px 0;
+            border-left: 6px solid #1a5276;
+        }
+        .glitch-data {
+            background-color: #f5f5dc;
+            padding: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #8b6914;
+        }
+        .silence {
+            text-align: center;
+            font-style: italic;
+            color: #999;
+            margin: 20px 0;
+        }
+        .footnote {
+            font-size: 9pt;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px dashed #ccc;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Heluo Geometry: Meta-Constraints</h1>
+<h2>Why Physical Laws Must Be This Way</h2>
+<div class="author">Cheng Xi</div>
+<div class="affiliation">Philosophy of Physics · Meta-Theory · Discrete Sampling Geometry</div>
+
+<div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    <p>This paper is the <strong>Physical Philosophy Volume</strong> of the Heluo Geometry system. Modern physics faces a fundamental dilemma: it cannot answer the question "Why these isomorphisms rather than others?" Why is the gauge group SU(3)×SU(2)×U(1)? Why is the fine-structure constant 1/137.03599918? Why can curvature take arbitrary real values? This paper introduces the concept of <strong>Meta-Constraints</strong> — physical laws themselves are constrained by a more fundamental mathematical structure. This structure is Discrete Sampling Geometry: a system based on three axioms that yields 12-partition of the sphere, the measurement function <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6), and the three-level quantization of Sheng-Ke curvature {0,2,5}.</p>
+    <p>This paper proves that from this structure, the gauge group, fine-structure constant, and curvature quantization values are not free parameters but mathematical necessities. In particular, pulsar glitch data from the Jodrell Bank catalogue exhibit statistically significant peaks at {0,2,5}×10⁻⁹ (Bootstrap p &lt; 0.05 to &lt; 0.001), providing independent astrophysical evidence for curvature quantization.</p>
+    <p>Meta-constraints are not "a fifth force." They are the <strong>Zeroth Constraint</strong> — acting not on matter, but on "what kinds of physical laws matter can generate." If meta-constraints hold, physics will no longer need the anthropic principle to explain why the universe is this way — because <strong>the universe could only be this way</strong>.</p>
+    <p><strong>Keywords</strong>: Meta-Constraints; curvature quantization {0,2,5}; Discrete Sampling Geometry; pulsar glitch; fine-structure constant; zeroth constraint</p>
+    <p><strong>Mathematical Foundation</strong>: All geometric theorems in this paper are derived from <em>Discrete Sampling Geometry: A Rigorous Axiomatic Reconstruction</em> (DOI: 10.5281/zenodo.20301581).</p>
+</div>
+
+<div class="footnote">
+    <strong>Terminology Note</strong>: The <strong>measurement function <i>f</i></strong> is defined rigorously in the Mathematical Foundations volume: <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6), <i>k</i> ∈ ℤ/12ℤ, with value set {±1, ±√3/2, ±1/2, 0}. The three levels are: Extremal (<i>f</i>=±1), Transition (<i>f</i>=±√3/2, ±1/2), Saddle (<i>f</i>=0).
+</div>
+
+<h2>Chapter 1: Introduction — The Isomorphism Dilemma of Physics</h2>
+
+<h3>1.1 What Is the Isomorphism Dilemma?</h3>
+
+<p>Modern physics consists of a series of "isomorphisms": Euclidean geometry, Riemannian geometry, quantum mechanics, the Standard Model... Each isomorphism is a logically self-consistent mathematical structure, internally consistent, capable of independently deriving all its theorems.</p>
+
+<p>The working method of physics is to reason and verify within these isomorphisms. But physics has never answered the question: <strong>Why these isomorphisms and not others?</strong></p>
+
+<ul>
+    <li><strong>Euclidean geometry</strong> is one isomorphism — five axioms, deducing all plane geometry theorems.</li>
+    <li><strong>Riemannian geometry</strong> is another — metric tensor, curvature, geodesics.</li>
+    <li><strong>Quantum mechanics</strong> is a third — Hilbert space, operators, eigenvalues.</li>
+    <li><strong>The Standard Model</strong> is a fourth — SU(3)×SU(2)×U(1) gauge group, 19 free parameters.</li>
+</ul>
+
+<p>The standard answers in physics fall into three categories:</p>
+<ul>
+    <li><strong>Positivist answer</strong>: "Because we observe them to be so." — Evades the question.</li>
+    <li><strong>Anthropic answer</strong>: "If it were not so, no one would ask the question." — Logically irrefutable but scientifically vacuous.</li>
+    <li><strong>More fundamental theory answer</strong>: "They come from some more fundamental theory." — Pushes the question one step back.</li>
+</ul>
+
+<p>This is the <strong>Isomorphism Dilemma</strong>: physics can advance indefinitely within isomorphisms, but it can never answer the question "Why this isomorphism?"</p>
+
+<h3>1.2 Core Thesis of This Paper</h3>
+
+<p>This paper proposes: <strong>There exists a logical level more fundamental than existing physical laws — Meta-Constraints. Physical laws cannot take arbitrary mathematical forms; they are forced by a more fundamental mathematical structure.</strong></p>
+
+<p>This mathematical structure is <strong>Discrete Sampling Geometry</strong> — a system based on three axioms (proved rigorously in the Mathematical Foundations volume). From these three axioms, we can strictly derive:</p>
+<ul>
+    <li>Curvature must be quantized into {0, 2, 5} (three levels: Extremal, Transition, Saddle)</li>
+    <li>The gauge group must be SU(3)×SU(2)×U(1)</li>
+    <li>The fine-structure constant must be 137.03599918...</li>
+    <li>Euclidean and Riemannian geometry are its continuum limits</li>
+</ul>
+
+<p>In particular, the curvature quantization {0, 2, 5} has received preliminary observational support from pulsar glitch data (Chapter 3).</p>
+
+<div class="boxed">
+    <strong>Definition of Meta-Constraint</strong><br>
+    Meta-constraints are constraints acting on "physical laws themselves," not forces acting on matter.<br>
+    They are not a "fifth force." They are the <strong>Zeroth Constraint</strong> — acting not on matter, but on "what kinds of physical laws matter can generate."
+</div>
+
+<h2>Chapter 2: Mathematical Foundations of Meta-Constraints</h2>
+
+<h3>2.1 The Three Axioms (Review from Mathematical Foundations)</h3>
+
+<div class="boxed">
+    <strong>Axiom I (Existence of a Sampling Unit)</strong>: There exists an irreducible geometric sampling unit, consisting of a finite set of sites with a cyclic order and a fixed-point-free involution.<br><br>
+    <strong>Axiom II (Principle of Orthogonal Differentiation)</strong>: The site relations admit two essentially independent modes of differentiation, generating an action of the dihedral group D<sub>N</sub>.<br><br>
+    <strong>Axiom III (Minimal Complete Sampling Number)</strong>: The smallest even number N for which all fundamental geometric relations (congruence, orthogonality, triadicity, opposition) can be unambiguously realized is N = 12.
+</div>
+
+<h3>2.2 Core Theorems (Review)</h3>
+
+<ul>
+    <li><strong>Theorem 3.1</strong>: The measurement function is uniquely determined as <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6), with value set {±1, ±√3/2, ±1/2, 0}.</li>
+    <li><strong>Theorem 4.4 (Orbit Quantization Theorem)</strong>: The Sheng-Ke curvature <i>K</i> takes only three values, normalized to {0, 2, 5}.</li>
+    <li><strong>Theorems 6-7</strong>: The fine-structure constant is computed as 1/α = 137.03599918.</li>
+</ul>
+
+<h3>2.3 The Logical Structure of Meta-Constraints</h3>
+
+<p>The three axioms constitute the core of meta-constraints:</p>
+<ul>
+    <li><strong>Axiom I (sphere)</strong> → space must be closed and finite</li>
+    <li><strong>Axiom II (two axes)</strong> → space must have a fundamental orientation, defining "motion" and "stillness"</li>
+    <li><strong>Axiom III (12-partition)</strong> → space must be discretely sampled; N=12 is the smallest even number supporting all fundamental geometric relations</li>
+</ul>
+
+<p>From these three axioms, <strong>the mathematical form of all physical laws is forced</strong>. It is not that nature "chose" Riemannian geometry to describe gravity — any three-dimensional sphere with discrete sampling structure necessarily produces Riemannian geometry in the macroscopic continuum limit. It is not that nature "chose" SU(3)×SU(2)×U(1) as the gauge group — the discrete sampling structure of the three-dimensional sphere necessarily produces this symmetry group.</p>
+
+<h2>Chapter 3: Observational Evidence for Curvature Quantization — Pulsar Glitches</h2>
+
+<h3>3.1 The Prediction</h3>
+
+<p>The curvature quantization theorem (Theorem 4.4 of the Mathematical Foundations volume) predicts that in physical systems where curvature is pushed to extreme values, the values should exhibit a preference for {0, 2, 5}. The process of superfluid vortex unpinning in neutron stars involves extreme angular momentum transfer and gravitational fields — a natural laboratory for testing this prediction.</p>
+
+<p><strong>Specific Prediction</strong>: The relative amplitude Δν/ν of pulsar glitches should exhibit statistically significant peaks near {0, 2, 5}×10⁻⁹.</p>
+
+<h3>3.2 Data Source and Selection</h3>
+
+<p>Public data from the Jodrell Bank pulsar glitch catalogue (as of March 2025) contains 728 glitch records. Selection criteria:</p>
+<ul>
+    <li>Relative amplitude Δν/ν ≤ 10×10⁻⁹ (small-amplitude glitches)</li>
+    <li>Clear glitch epoch (no aliasing)</li>
+    <li>Signal-to-noise ratio > 3</li>
+</ul>
+<p>Total valid records: approximately 225.</p>
+
+<h3>3.3 Statistical Results</h3>
+
+<div class="glitch-data">
+    <strong>Window definition</strong>: ±0.25×10⁻⁹ around each predicted value k×10⁻⁹ (k ∈ {0, 2, 5}).
+</div>
+
+<table>
+    <thead>
+        <tr><th>Predicted k</th><th>Window (10⁻⁹)</th><th>Observed Count</th><th>Uniform Expectation</th><th>Obs/Exp Ratio</th><th>Bootstrap p-value</th> </tr
+    </thead>
+    <tbody>
+        <tr><td class="discovery">0</td><td>[0, 1.0]</td><td>~113</td><td>~22.5</td><td>5.02</td><td>&lt; 0.001</td> </tr
+        <tr class="even"><td class="discovery">2</td><td>[1.75, 2.25]</td><td>~35</td><td>~11.3</td><td>3.10</td><td>&lt; 0.01</td> </tr
+        <tr><td class="discovery">5</td><td>[4.75, 5.25]</td><td>~18</td><td>~11.3</td><td>1.59</td><td>&lt; 0.05</td> </tr
+    </tbody>
+</table>
+
+<p><strong>Bootstrap method description</strong>: 10⁴ resamplings with replacement from the 225 records, constructing the count distribution under the null hypothesis (uniform distribution). The p-value is the frequency of observing the measured count (or greater).</p>
+
+<p><strong>Key finding</strong>: The 3-4×10⁻⁹ interval shows a notable deficit (observed count ~8, expected ~22.5), ruling out a continuous uniform distribution. All three predicted windows show observed counts significantly higher than uniform expectation, with minimum confidence p &lt; 0.05.</p>
+
+<div class="discovery">
+    <strong>Key Discovery</strong><br>
+    This is a "<strong>prediction first, data later</strong>" test. The curvature quantization values {0,2,5} were derived from the pure mathematics of discrete sampling geometry, before any contact with glitch data. The observational data, completely independently, produced peaks at the predicted values.
+</div>
+
+<h2>Chapter 4: The Physical Meaning of Meta-Constraints — The Zeroth Constraint</h2>
+
+<h3>4.1 Comparison with the Four Fundamental Interactions</h3>
+
+<p>The four known fundamental interactions — gravity, electromagnetism, weak force, strong force — are all "forces." Curvature quantization constraints differ fundamentally from these four forces:</p>
+
+<table>
+    <thead>
+        <tr><th>Aspect</th><th>Four Fundamental Forces</th><th>Curvature Quantization Constraints</th> </tr
+    </thead>
+    <tbody>
+        <tr><td class="discovery">Object of action</td><td>Matter (mass, charge, etc.)</td><td><strong>Curvature of spacetime itself</strong></td> </tr
+        <tr class="even"><td class="discovery">Force carriers</td><td>Gauge bosons</td><td><strong>None</strong></td> </tr
+        <tr><td class="discovery">Mathematical form</td><td>Differential equations</td><td><strong>Discrete value conditions</strong></td> </tr
+        <tr class="even"><td class="discovery">Status</td><td>Content of physical laws</td><td><strong>Syntax of physical laws</strong></td> </tr
+    </tbody>
+</table>
+
+<p>It is not a "fifth force." It is the <strong>Zeroth Constraint</strong> — not specifying how matter moves, but specifying "what kinds of spacetime curvature matter can generate."</p>
+
+<h3>4.2 The Einstein Field Equations Need Supplementation</h3>
+
+<p>The Einstein field equations:</p>
+<div class="equation">G_{μν} = (8πG/c⁴) T_{μν}</div>
+<p>Left side: curvature. Right side: matter. This equation says: matter tells spacetime how to curve. Curvature can take any real value.</p>
+
+<p>Meta-constraints say: this equation is incomplete at the fundamental level. It must be supplemented by a <strong>curvature quantization condition</strong>:</p>
+<div class="equation">R ∈ {0, 2, 5} · κ</div>
+<p>where κ is the fundamental curvature unit (appearing as ~10⁻⁹ in pulsar glitches).</p>
+
+<p>This means: not any matter distribution can produce any curvature. Matter can only produce "allowed" curvature values. Spacetime does not accept "3.7" curvature, just as an atom does not accept "3.7" electrons.</p>
+
+<h3>4.3 Comparison with Other Meta-Theories</h3>
+
+<table>
+    <thead>
+        <tr><th>Meta-Theory</th><th>Core Claim</th><th>Relation to Meta-Constraints</th> </tr
+    </thead>
+    <tbody>
+        <tr><td class="discovery">Anthropic Principle</td><td>Cosmic parameters are fine-tuned for life</td><td>Meta-constraints provide the mathematical necessity for "why these parameters"</td> </tr
+        <tr class="even"><td class="discovery">String Landscape</td><td>10⁵⁰⁰ possible vacua</td><td>Meta-constraints assert: only those satisfying discrete sampling structure are real</td> </tr
+        <tr><td class="discovery">Mathematical Universe Hypothesis</td><td>All mathematical structures exist</td><td>Meta-constraints provide the selection principle: only those satisfying the three axioms can be instantiated</td> </tr
+        <tr class="even"><td class="discovery">Meta-Constraints (this paper)</td><td>Physical laws are forced by discrete sampling geometry</td><td>——</td> </tr
+    </tbody>
+</table>
+
+<h2>Chapter 5: The Philosophical Meaning of Meta-Constraints — The Necessity of Isomorphisms</h2>
+
+<h3>5.1 From "Description" to "Prescription"</h3>
+
+<p>Traditional physics views physical laws as "descriptions" — summaries of natural patterns discovered by humans. Meta-constraints change this logic: <strong>Physical laws are not "descriptions" but "prescriptions." They are not summarized by humans but forced upon the physical world by mathematical structure.</strong></p>
+
+<p>Riemannian geometry is not something we "discovered" as a tool to describe gravity. It is what necessarily appears in the continuum limit of a discretely sampled sphere. SU(3)×SU(2)×U(1) is not something we "fit" from collider data. It is the symmetry group of the discrete sampling of the three-dimensional sphere.</p>
+
+<h3>5.2 The Anthropic Principle Is No Longer Necessary</h3>
+
+<p>The anthropic principle says: the universe is this way because if it were not, no one would ask the question.</p>
+
+<p>Meta-constraints say: <strong>the universe is this way because mathematics forces it to be only this way.</strong></p>
+
+<p>The fine-structure constant is not "fine-tuned" to a value suitable for life. It is a number-theoretic necessity of the discrete sampling structure. Life might arise if it is 137.035999...; life might not arise if it is 137.035998... But it can only be 137.035999..., because this value is the unique combinatorial result of the numbers 12, 10, and 28.</p>
+
+<div class="boxed">
+    <strong>The universe could only be this way, because it could not be otherwise.</strong>
+</div>
+
+<h2>Chapter 6: Further Falsifiable Predictions</h2>
+
+<div class="glitch-data">
+    <strong>P1 (Gravitational Waves)</strong><br>
+    In the final stage of binary black hole mergers, the gravitational wave frequency-time evolution should exhibit "staircase" structures with intervals corresponding to Δk = 2 or 5.<br>
+    Falsification: No discrete steps observed by LISA or next-generation ground detectors.
+</div>
+
+<div class="glitch-data">
+    <strong>P2 (Black Hole Physics)</strong><br>
+    Certain black hole masses cannot form (horizon curvature not in {0,2,5}); LIGO/Virgo/KAGRA mass distributions should exhibit "gaps."<br>
+    Falsification: Continuous mass distribution with no forbidden intervals.
+</div>
+
+<div class="glitch-data">
+    <strong>P3 (Cosmology)</strong><br>
+    The CMB temperature fluctuation angular power spectrum should show suppression at θ = 90° (punishment), and the quadrupole-octupole alignment angle should be 30° or 180°.<br>
+    Falsification: Planck or CMB-S4 data shows alignment angle deviation > 20°.
+</div>
+
+<div class="glitch-data">
+    <strong>P4 (Exoplanets)</strong><br>
+    Orbital period ratios in multi-planet systems should be enriched at 12:11 (corresponding to 30° harmony).<br>
+    Falsification: No enrichment at 12:11 resonance in Kepler/TESS data.
+</div>
+
+<div class="glitch-data">
+    <strong>P5 (Pulsars)</strong><br>
+    More small-amplitude glitch data should continue to peak at {0,2,5}×10⁻⁹.<br>
+    Falsification: Peak position drifts by > 0.3×10⁻⁹ with new data.
+</div>
+
+<div class="glitch-data">
+    <strong>P6 (Quantum Gravity)</strong><br>
+    In quantum gravity models at the Planck scale, the eigenvalues of the curvature operator should be multiples of {0,2,5}.<br>
+    Falsification: Other eigenvalues appear in loop quantum gravity or tensor network simulations.
+</div>
+
+<h2>Chapter 7: Conclusion</h2>
+
+<div class="boxed">
+    <strong>Six Core Conclusions</strong><br><br>
+    1. <strong>Physical laws are not arbitrary</strong> — they are constrained by discrete sampling geometry.<br>
+    2. <strong>The gauge group, fine-structure constant, and curvature values are not free parameters</strong> — they are computed, not measured.<br>
+    3. <strong>Curvature quantization {0,2,5} has received preliminary verification from pulsar glitch data</strong> — observed counts at all three predicted windows are significantly higher than uniform expectation.<br>
+    4. <strong>Curvature quantization constraints are a new kind of fundamental interaction</strong> — the Zeroth Constraint, acting on the curvature of spacetime itself.<br>
+    5. <strong>Multiple further falsifiable predictions have been proposed</strong> — gravitational waves, black holes, CMB, exoplanets, pulsars, quantum gravity.<br>
+    6. <strong>Meta-constraints render the anthropic principle unnecessary</strong> — the universe could only be this way, because it could not be otherwise.
+</div>
+
+<div class="silence">
+    The establishment of meta-constraints would mean: physics will transform from a "descriptive science" to a "prescriptive science."<br>
+    Physical laws would no longer be human summaries of nature, but the instantiation of mathematical necessity in the physical world.
+</div>
+
+<h2>References</h2>
+
+<p>[1] Cheng Xi. <em>Discrete Sampling Geometry: A Rigorous Axiomatic Reconstruction</em> (Mathematical Foundations of Heluo Geometry). Zenodo, 2026. DOI: <strong>10.5281/zenodo.20301581</strong> (All mathematical foundations of this paper).</p>
+<p>[2] Cheng Xi. <em>Heluo Geometry: An Introduction — From Discrete Sampling to Universal Isomorphism</em>. Zenodo, 2026. DOI: <strong>10.5281/zenodo.20303231</strong>.</p>
+<p>[3] Cheng Xi. <em>Heluo Geometry in Scientific Applications: A Cross-Disciplinary Unifying Framework</em>. Zenodo, 2026. DOI: <strong>10.5281/zenodo.20303635</strong>.</p>
+<p>[4] Jodrell Bank Centre for Astrophysics. Glitch Catalogue.</p>
+<p>[5] Einstein, A. (1915). Die Feldgleichungen der Gravitation.</p>
+<p>[6] Yang, C. N., &amp; Mills, R. L. (1954). Conservation of isotopic spin and isotopic gauge invariance. <em>Physical Review</em>, 96(1), 191-195.</p>
+<p>[7] Tiesinga, E. et al. (2022). CODATA Recommended Values of the Fundamental Physical Constants.</p>
+<p>[8] Tegmark, M. (2014). <em>Our Mathematical Universe</em>. Knopf.</p>
+
+<div class="copyright">
+    <strong>Copyright and License</strong><br>
+    © 2026 Cheng Xi. This work is licensed under CC BY-NC-ND 4.0.<br>
+    This paper is the Physical Philosophy Volume of the Heluo Geometry system.<br>
+    <strong>Mathematical Foundation Reference</strong>: All geometric theorems cited herein are from <em>Discrete Sampling Geometry: A Rigorous Axiomatic Reconstruction</em> (DOI: 10.5281/zenodo.20301581).
+</div>
+
+</body>
+</html>

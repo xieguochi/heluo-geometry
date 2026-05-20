@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heluo Geometry: An Introduction — From Discrete Sampling to Universal Isomorphism</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', 'Georgia', serif;
+            font-size: 12pt;
+            line-height: 1.6;
+            margin: 2.5cm auto;
+            max-width: 800px;
+            padding: 0 20px;
+            text-align: justify;
+        }
+        h1 {
+            font-size: 20pt;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 16pt;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 14pt;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .author {
+            text-align: center;
+            font-size: 14pt;
+            margin-bottom: 5px;
+        }
+        .affiliation {
+            text-align: center;
+            font-size: 10pt;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .abstract {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        .abstract-title {
+            font-weight: bold;
+            font-size: 14pt;
+            margin-bottom: 10px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .boxed {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 15px 0;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 10pt;
+            text-align: center;
+        }
+        .path {
+            background-color: #e8f4f8;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #1a5276;
+        }
+        .term {
+            font-weight: bold;
+            color: #1a5276;
+        }
+        .figure {
+            text-align: center;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 10pt;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Heluo Geometry: An Introduction From Discrete Sampling to Universal Isomorphism</h1>
+
+<p class="author">Cheng Xi</p>
+<p class="affil" style="text-align:center;">Chengxi Academy of Chinese Classical Studies</p>
+<p style="text-align:center; font-size:0.9em; color:#555;">Revised: May 2026 — First Edition</p>
+
+<div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    <p>This paper is the <strong>Introductory Volume</strong> of the Heluo Geometry system. Heluo Geometry is a new geometric paradigm whose core thesis is: <strong>discrete precedes continuous, sampling precedes manifold, structure precedes metric</strong>. The system consists of a series of independent papers: the Mathematical Foundations volume establishes a rigorous axiomatic reconstruction from three axioms to the uniqueness of the measurement function and the three-level quantization of Sheng-Ke curvature; the Scientific Applications volume demonstrates the cross-scale projections of this geometric structure in physics, chemistry, biology, cosmology, and aerospace engineering.</p>
+    <p>This Introduction addresses three fundamental questions: <strong>What problem do we face? What have we discovered? What does this mean?</strong></p>
+    <p><strong>Core Discovery</strong>: From three axioms, discrete sampling geometry necessarily yields the measurement function <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6) and the three-level quantization of Sheng-Ke curvature (Extremal / Transition / Saddle). This mathematical structure reappears in the discrete scale invariance (DSI) of condensed matter physics and the gauge group dimension decomposition (8+3+1=12) of particle physics, constituting cross-scale isomorphic evidence.</p>
+    <p><strong>Core Conclusion</strong>: Mathematics is not a human invention. Mathematics is the underlying code of the universe. Physics is the projection of mathematics at macroscopic scales. The universe is the instantiation of mathematics at all scales from micro to macro.</p>
+    <p><strong>Keywords</strong>: Heluo Geometry; Discrete Sampling Geometry; three-level curvature quantization; Discrete Scale Invariance; gauge group; universal isomorphism</p>
+</div>
+
+<h2>Chapter 1: What Problem Do We Face?</h2>
+
+<h3>1.1 The Isomorphism Dilemma of Physics</h3>
+
+<p>Modern physics consists of a series of "isomorphisms": Euclidean geometry, Riemannian geometry, quantum mechanics, the Standard Model... Each isomorphism is a logically self-consistent mathematical structure, internally consistent, capable of independently deriving all its theorems.</p>
+
+<p>Yet physics cannot answer a fundamental question: <strong>Why these isomorphisms and not others?</strong></p>
+
+<ul>
+    <li>Why is the gauge group SU(3)×SU(2)×U(1), rather than SU(5) or SO(10)?</li>
+    <li>Why is the fine-structure constant 1/137.03599918, rather than some other value?</li>
+    <li>Why can curvature take arbitrary real values?</li>
+</ul>
+
+<p>Standard answers in physics fall into three categories: positivism ("because we observe them to be so"), the anthropic principle ("if it were not so, no one would ask the question"), or a more fundamental theory ("they come from some more fundamental theory"). The first two evade the question; the third merely pushes it one step back.</p>
+
+<p>This is the <strong>Isomorphism Dilemma</strong>: physics can advance indefinitely within isomorphisms, but it can never answer the question "Why this isomorphism?"</p>
+
+<h3>1.2 The Boundaries of Science</h3>
+
+<p>Science has chosen reductionism—decomposition, measurement, quantitative prediction. This method is extraordinarily successful at specific scales, but it deals with "substance" (material composition) rather than "relation" (connection and meaning).</p>
+
+<p><strong>The Boundaries of Science</strong>: Science can answer "what is," but not "what should I do"; it can answer "how it works," but not "what this means to me." This is not a defect of science, but its division of labor.</p>
+
+<h3>1.3 Why Bridge Mathematics, Physics, and Cosmology?</h3>
+
+<p>Mathematics, physics, and cosmology are traditionally treated as separate: mathematics is abstract and human-constructed; physics describes nature; cosmology is the universe we inhabit. They are related by "application"—mathematics is applied to physics, physics is applied to cosmology.</p>
+
+<p>This paper proposes a fundamental reorientation: <strong>Mathematics = the underlying code of the universe; Physics = the projection of mathematics at macroscopic scales; Cosmology = the instantiation of mathematics at all scales from micro to macro.</strong> Bridging the three is the only way out of the Isomorphism Dilemma.</p>
+
+<h2>Chapter 2: What Have We Discovered?</h2>
+
+<h3>2.1 Three Axioms → Measurement Function → Three-Level Quantization</h3>
+
+<p>The Mathematical Foundations volume of Heluo Geometry, <em>Discrete Sampling Geometry: A Rigorous Axiomatic Reconstruction</em>, starts from three axioms:</p>
+<ul>
+    <li><strong>Axiom I (Existence of a Sampling Unit)</strong>: There exists an irreducible geometric sampling unit, consisting of a finite set of sites with a cyclic order and a fixed-point-free involution.</li>
+    <li><strong>Axiom II (Principle of Orthogonal Differentiation)</strong>: The site relations admit two essentially independent modes of differentiation, generating an action of the dihedral group <i>D</i><sub><i>N</i></sub>.</li>
+    <li><strong>Axiom III (Minimal Complete Sampling Number)</strong>: The smallest even number <i>N</i> for which all fundamental geometric relations (congruence, orthogonality, triadicity, opposition) can be unambiguously realized is <i>N</i> = 12.</li>
+</ul>
+
+<p>It rigorously proves:</p>
+<ul>
+    <li><strong>Theorem 3.1 (Uniqueness of the Measurement Function)</strong>: <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6), with value set {±1, ±√3/2, ±1/2, 0}.</li>
+    <li><strong>Theorem 4.4 (Orbit Quantization Theorem)</strong>: The values of the Sheng-Ke curvature <i>K</i> are strictly stratified into three levels—Extremal (<i>K</i>=0), Transition (<i>K</i>=1), Saddle (<i>K</i>=0).</li>
+</ul>
+
+<div class="boxed">
+    <strong>Core Discovery I</strong><br>
+    From three axioms, discrete sampling geometry necessarily yields the measurement function <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6) and the three-level quantization of Sheng-Ke curvature. This is not a "choice" but a "necessity."
+</div>
+
+<h3>2.2 The Three-Level Structure in Discrete Scale Invariance (DSI)</h3>
+
+<p>Modern condensed matter physics has discovered a universal phenomenon—<strong>Discrete Scale Invariance (DSI)</strong>. Systems with DSI exhibit log-periodic oscillations in physical quantities as external parameters vary, with characteristic scale ratios λ taking discrete values.</p>
+
+<p>A 2020 <em>Nature</em> report on quantum oscillations in the topological insulator ZrTe₅ crystals showed:</p>
+<ul>
+    <li>Bulk ZrTe₅ crystals: scale ratio λ ≈ <span class="term">3.3</span></li>
+    <li>ZrTe₅ thin flakes (~160nm): scale ratio λ ≈ <span class="term">1.6</span></li>
+</ul>
+<p>The ratio 3.3/1.6 ≈ 2.06 is mathematically isomorphic to the ratio between Extremal and Transition levels in the three-level structure.</p>
+
+<div class="boxed">
+    <strong>Core Discovery II</strong><br>
+    The discrete scale ratios in DSI systems exhibit the same multiplicative pattern as the three-level quantization of Heluo Geometry.
+</div>
+
+<h3>2.3 The Three-Level Structure in Gauge Groups</h3>
+
+<p>The Orbit Quantization Theorem gives the three-level site counts: 2 sites in the Extremal level, 8 sites in the Transition level, 2 sites in the Saddle level. Further symmetry analysis yields:</p>
+
+<table>
+    <thead>
+        <tr><th>Level</th><th>Site Count</th><th>Generator Dimension</th><th>Gauge Group</th><th>Physical Meaning</th> </tr
+    </thead>
+    <tbody>
+        <tr><td class="term">Transition</td><td>8</td><td>8</td><td>SU(3)</td><td>Strong interaction</td> </tr
+        <tr class="even"><td class="term">Extremal Substructure</td><td>2 → 3</td><td>3</td><td>SU(2)</td><td>Weak interaction</td> </tr
+        <tr><td class="term">Saddle Substructure</td><td>2 → 1</td><td>1</td><td>U(1)</td><td>Electromagnetic interaction</td> </tr
+        <tr style="font-weight: bold;"><td>Total</td><td>12</td><td>12</td><td>SU(3)×SU(2)×U(1)</td><td>Standard Model</td> </tr
+    </tbody>
+</table>
+
+<p>The fine-structure constant can also be decomposed into three parts:</p>
+<div class="equation">1/α = 137 + 0.03599918</div>
+<p>The integer part 137 ≈ 12² + 1 - 8 (related to the three-level dimensional combination), and the fractional part corresponds to cosmological dynamical corrections.</p>
+
+<div class="boxed">
+    <strong>Core Discovery III</strong><br>
+    The gauge group dimension decomposition 8+3+1=12 is fully isomorphic to the three-level site count 8+3+1=12. The decomposition of 1/α also mirrors the three-level structure. This is not coincidence but the projection of discrete sampling geometry onto particle physics.
+</div>
+
+<h3>2.4 The Unifying Chain</h3>
+
+<div class="figure">
+<b>The Isomorphic Chain of Heluo Geometry</b><br><br>
+DSI Scale Ratios (λ~3.3 / λ~1.6)<br>
+    ↓ Isomorphism<br>
+Gauge Group Dimension Decomposition (8+3+1=12)<br>
+    ↓ Isomorphism<br>
+Three-Level Quantization (Extremal / Transition / Saddle)<br>
+    ↓ Isomorphism<br>
+(Further cross-scale isomorphisms detailed in the Scientific Applications volume)
+</div>
+
+<h2>Chapter 3: What Does This Mean?</h2>
+
+<h3>3.1 Mathematics Is the Underlying Code of the Universe</h3>
+
+<p><strong>Traditional view</strong>: Mathematics is a human invention, a tool for describing nature.<br>
+<strong>Heluo Geometry's discovery</strong>: Mathematics is not invented but discovered. The measurement function <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6) and its three-level quantization structure reappear in DSI and gauge groups, proving that the same mathematical structure exists naturally at different scales and in different domains.</p>
+
+<h3>3.2 Physics Is the Macroscopic Projection of Mathematics</h3>
+
+<p><strong>Traditional view</strong>: Physical laws are the fundamental rules of nature; mathematics is the language that describes them.<br>
+<strong>Heluo Geometry's discovery</strong>: Physical laws are the projections of discrete sampling geometry at macroscopic scales. The dimension 8+3+1=12 of the gauge group SU(3)×SU(2)×U(1) originates precisely from the orbit structure of ℤ/12ℤ.</p>
+
+<h3>3.3 The Universe Is the Instantiation of Mathematics</h3>
+
+<p><strong>Traditional view</strong>: The universe is a collection of matter and energy; mathematics is the tool that describes it.<br>
+<strong>Heluo Geometry's discovery</strong>: At the Planck scale, the universe possesses an intrinsic discrete sampling geometry. Dark matter, dark energy, and the gauge group structure of fundamental particles are all topological effects of this underlying geometry at macroscopic scales.</p>
+
+<div class="boxed">
+    <strong>Final Conclusion</strong><br>
+    Mathematics proves structural necessity (3 axioms → <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6) → three-level quantization).<br>
+    The universe manifests structural existence (DSI, gauge groups, fine-structure constant).<br>
+    Physics explains why structure exists (gauge group dimensions, dark energy properties).<br>
+    Three levels, speaking the same mathematical language.
+</div>
+
+<h2>Chapter 4: What Does This System Contain?</h2>
+
+<h3>4.1 System Overview</h3>
+
+<table>
+    <thead>
+        <tr><th>Volume</th><th>Title</th><th>Core Content</th> </tr
+    </thead>
+    <tbody>
+        <tr><td class="term">Introduction</td><td>Heluo Geometry: An Introduction — From Discrete Sampling to Universal Isomorphism</td><td>Problem statement, core discoveries, system overview, reading paths</td> </tr
+        <tr class="even"><td class="term">Mathematical Foundations</td><td>Discrete Sampling Geometry: A Rigorous Axiomatic Reconstruction</td><td>Three axioms, uniqueness of measurement function, proof of three-level quantization</td> </tr
+        <tr><td class="term">Scientific Applications</td><td>Heluo Geometry in Scientific Applications: A Cross-Disciplinary Unifying Framework</td><td>Projections in physics, chemistry, biology, cosmology, aerospace engineering</td> </tr
+        <tr class="even"><td class="term">Physical Philosophy</td><td>Heluo Geometry: Meta-Constraints — Why Physical Laws Must Be This Way</td><td>Why physical laws must be this way, pulsar glitch verification</td> </tr
+        <tr><td class="term">Celestial Sphere Engine</td><td>Heluo Celestial Sphere Engine: An Outline of a Unified Field Theory</td><td>Forms-Qi conservation, cross-scale dynamical framework</td> </tr
+    </tbody>
+</table>
+
+<h3>4.2 Volume Descriptions</h3>
+
+<p><strong>Mathematical Foundations</strong> — <em>Discrete Sampling Geometry: A Rigorous Axiomatic Reconstruction</em>: Starting from three axioms, rigorously proves the uniqueness of the measurement function <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6) and the three-level quantization of Sheng-Ke curvature. This is the mathematical foundation of the entire Heluo Geometry system. Published on Zenodo (DOI: 10.5281/zenodo.20301581).</p>
+
+<p><strong>Scientific Applications</strong> — <em>Heluo Geometry in Scientific Applications: A Cross-Disciplinary Unifying Framework</em>: Demonstrates cross-scale isomorphic projections of discrete sampling geometry in physics (gauge groups, fine-structure constant), chemistry (periodic table), biology (genetic code), cosmology (dark energy, CMB), and aerospace engineering (constellation phasing).</p>
+
+<p><strong>Physical Philosophy</strong> — <em>Heluo Geometry: Meta-Constraints — Why Physical Laws Must Be This Way</em>: Addresses "why physical laws must be this way." Introduces the concept of "meta-constraint"—the zeroth constraint, acting not on matter but on "what kinds of physical laws matter can generate." The three-level quantization of curvature has received preliminary verification from pulsar glitch data.</p>
+
+<p><strong>Celestial Sphere Engine</strong> — <em>Heluo Celestial Sphere Engine: An Outline of a Unified Field Theory</em>: Takes the three axioms as hardware architecture, Forms-Qi conservation Δρ = -Δγ as the core law of motion, and three-level quantization as output signature, constructing a cross-scale unified dynamical framework.</p>
+
+<h2>Chapter 5: How to Read This System?</h2>
+
+<div class="path">
+    <strong>For Mathematicians</strong><br>
+    Mathematical Foundations → Scientific Applications → Physical Philosophy
+</div>
+
+<div class="path">
+    <strong>For Physicists</strong><br>
+    Introduction → Physical Philosophy → Scientific Applications
+</div>
+
+<div class="path">
+    <strong>For Chemists/Biologists</strong><br>
+    Introduction → Scientific Applications
+</div>
+
+<div class="path">
+    <strong>For Aerospace Engineers</strong><br>
+    Introduction → Scientific Applications (Aerospace section)
+</div>
+
+<div class="path">
+    <strong>For Philosophers</strong><br>
+    Introduction → Physical Philosophy
+</div>
+
+<div class="path">
+    <strong>For General Readers</strong><br>
+    Introduction → Scientific Applications
+</div>
+
+<h2>Chapter 6: Conclusion and Outlook</h2>
+
+<h3>6.1 Completed Work</h3>
+
+<ul>
+    <li><strong>Mathematical Foundations</strong>: From three axioms, proved the uniqueness of the measurement function and three-level quantization (Mathematical Foundations volume)</li>
+    <li><strong>Scientific Applications</strong>: Demonstrated cross-scale isomorphisms in physics, chemistry, biology, cosmology, and aerospace engineering (Scientific Applications volume)</li>
+    <li><strong>Physical Philosophy</strong>: Introduced the concept of "meta-constraint," found pulsar glitch verification (Physical Philosophy volume)</li>
+    <li><strong>Unified Framework</strong>: Constructed a cross-scale dynamical engine (Celestial Sphere Engine)</li>
+</ul>
+
+<h3>6.2 Falsifiable Predictions</h3>
+
+<table>
+    <thead>
+        <tr><th>ID</th><th>Field</th><th>Prediction</th> </tr
+    </thead>
+    <tbody>
+        <tr><td class="term">P1</td><td>Physics</td><td>Probability density exhibits 30° periodic modulation with amplitude 10⁻³~10⁻⁴</td> </tr
+        <tr class="even"><td class="term">P2</td><td>Physics</td><td>Total generator dimension of gauge group is 12</td> </tr
+        <tr><td class="term">P3</td><td>Chemistry</td><td>Properties of period 8 elements (119-168) follow f-value distribution predictions</td> </tr
+        <tr class="even"><td class="term">P4</td><td>Biology</td><td>Synonymous codon usage frequency positively correlated with orbit level (Spearman r > 0.6)</td> </tr
+        <tr><td class="term">P5</td><td>Cosmology</td><td>CMB quadrupole-octupole alignment angle is 30° or 180° (±10°)</td> </tr
+        <tr class="even"><td class="term">P6</td><td>Aerospace</td><td>New constellations adopt orbital phase differences that are integer multiples of 30°</td> </tr
+        <tr><td class="term">P7</td><td>Condensed Matter</td><td>Scale ratios in DSI systems exhibit three-level multiplicative distribution</td> </tr
+    </tbody>
+</table>
+
+<h3>6.3 Open Questions</h3>
+
+<ul>
+    <li>What is the dynamical mechanism for transitions between the three levels?</li>
+    <li>What is the origin of the measurement function <i>f</i>(<i>k</i>) = cos(5π<i>k</i>/6) in deeper algebraic structures (quaternions, octonions)?</li>
+    <li>Do DSI systems exhibit higher-order scale ratios beyond the three levels?</li>
+    <li>Does the fractional part of the fine-structure constant vary with cosmic expansion?</li>
+</ul>
+
+<div class="boxed">
+    <strong>Final Statement</strong><br>
+    Mathematics proves structural necessity. The universe manifests structural existence. Physics explains why structure exists.<br>
+    Three levels, speaking the same mathematical language.<br><br>
+    Heluo Geometry is not "a theory." It is "a meta-framework"—bringing mathematics, physics, and cosmology into dialogue on the same table.<br><br>
+    <strong>Discrete precedes continuous. Sampling precedes manifold. Structure precedes metric.</strong>
+</div>
+
+<h2>References</h2>
+
+<p>[1] Cheng Xi. <em>Discrete Sampling Geometry: A Rigorous Axiomatic Reconstruction</em> (Mathematical Foundations of Heluo Geometry). Zenodo, 2026. DOI: <strong>10.5281/zenodo.20301581</strong>.</p>
+<p>[2] Cheng Xi. <em>Heluo Geometry in Scientific Applications: A Cross-Disciplinary Unifying Framework</em>. Forthcoming.</p>
+<p>[3] Cheng Xi. <em>Heluo Geometry: Meta-Constraints — Why Physical Laws Must Be This Way</em>. Forthcoming.</p>
+<p>[4] Cheng Xi. <em>Heluo Celestial Sphere Engine: An Outline of a Unified Field Theory</em>. Forthcoming.</p>
+<p>[5] Planck Collaboration. (2020). Planck 2018 results. <em>Astron. Astrophys.</em>, 641, A1-A12.</p>
+<p>[6] Tiesinga, E. et al. (2022). CODATA Recommended Values of the Fundamental Physical Constants.</p>
+<p>[7] Rovelli, C. (2004). <em>Quantum Gravity</em>. Cambridge University Press.</p>
+
+<div class="copyright">
+    <strong>Copyright and License</strong><br>
+    © 2026 Cheng Xi (Chengxi Academy of Chinese Classical Studies). This work is licensed under CC BY-NC-ND 4.0. You may share and redistribute the material in any medium or format under the following terms: Attribution (BY) — You must give appropriate credit; NonCommercial (NC) — No commercial use; NoDerivatives (ND) — No remixing, transformation, or building upon the material.
+    <strong>Mathematical Foundation Reference</strong>: All geometric theorems cited herein are from <em>Discrete Sampling Geometry: A Rigorous Axiomatic Reconstruction</em> (DOI: 10.5281/zenodo.20301581).
+</div>
+
+</body>
+</html>
