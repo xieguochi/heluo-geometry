@@ -1,0 +1,2 @@
+# heluo-geometry
+Copyright and License. © 2026 Cheng Xi (Chengxi Academy of Chinese Classical Studies). This work is licensed under CC BY-NC-ND 4.0. You may share and redistribute the material in any medium or format under the following terms: Attribution (BY) — You must give appropriate credit; NonCommercial (NC) — No commercial use; NoDerivatives (ND) — No remixing, transformation, or building upon the material.
